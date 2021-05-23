@@ -1,5 +1,7 @@
 import React, { useState, useEffect }  from 'react';
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
 import { ICityWeather } from '../types'
 
 const API_KEY = 'eeb5d7b1fe69afdb6c982febcb09471e'
@@ -9,6 +11,29 @@ interface IError {
 interface CityProps {
   name: string
 }
+
+const CityWrapper = styled.div`
+  background-color: ${(props) => props.theme.colors.middleBlueGreen};
+  border-radius: 10px;
+  margin: 20px;
+  padding: 16px;
+  box-shadow: 5px 5px 15px 5px; 
+  & > a {
+    text-decoration: none;
+  } 
+`;
+
+const CityName = styled.h2`
+font-size: 1.5em;
+text-align: center;
+color: ${(props) => props.theme.colors.blackCoffee};
+`;
+
+const CityTemperature = styled.h2`
+font-size: 1.5em;
+text-align: center;
+color: #32292F;
+`;
 
 const City =  (props : CityProps) => {
   const { name } = props
@@ -44,14 +69,19 @@ const City =  (props : CityProps) => {
     return <div>Loading...</div>;
   } else {
     return (
-      <ul> 
+      <CityWrapper>
         <Link to={{
           pathname:`city/${name}`,
           state: {cityWeather}
         }}>
-          {name}: {cityWeather?.main?.temp} °C
+        <CityName>
+          {name}
+        </CityName>
+        <CityTemperature>  
+          {cityWeather?.main?.temp} °C
+        </CityTemperature>
         </Link>
-      </ul>
+      </CityWrapper>
     );
   }
   }
