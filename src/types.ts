@@ -6,7 +6,8 @@ export interface ICityWeather {
     }
     visibility: string
     sys: {
-        sunrise: string
-        sunset: string
+        sunrise: number
+        sunset: number
     }
+    timezone: number
 }
