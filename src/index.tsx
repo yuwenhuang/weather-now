@@ -1,52 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import City from './components/City';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 
-const defaultCitys = ["London", "Berlin"]
+import Dashboard from './Dashboard'
+import WeatherDetails from './components/WeatherDetails'
 
-interface DashboardState {
-  userLocation: string;
-  isSubmitted: boolean;
+const App = () => {
+  return(
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Dashboard} />
+        <Route path="/city/:name" component={WeatherDetails} />      
+      </Switch>  
+    </Router>
+  )
+
+  
 }
-
-class Dashboard extends Component<{}, DashboardState> {
-  state = {
-    userLocation: "",
-    isSubmitted: false,
-  };
-
-  handleSubmit = (event: React.SyntheticEvent) => {
-    event.preventDefault();
-    this.setState({isSubmitted: true})
-  }
-  handleInputChange = (event: React.FormEvent<HTMLInputElement>): void => {
-    this.setState({userLocation: event.currentTarget.value})
-  }
-
-  renderUserInput = () => {
-    return(
-      <form onSubmit={this.handleSubmit}>
-        <label>Enter your city:</label>
-        <input type="text" value={this.state.userLocation} onChange={this.handleInputChange}></input>
-        <input type="submit" value="Submit" />
-      </form>)
-  }
-
-  render() {
-    const { isSubmitted, userLocation } = this.state
-    
-    return(
-      <React.StrictMode>
-        Dashboard
-      {this.renderUserInput()}
-      { isSubmitted && <City name={userLocation}/> }
-      <City name={defaultCitys[0]}/>
-      <City name={defaultCitys[1]}/>
-      </React.StrictMode>
-    )  
-  }
-}
-
-export default Dashboard
-
-ReactDOM.render(< Dashboard />, document.getElementById('root'));
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);

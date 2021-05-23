@@ -1,21 +1,17 @@
 import React, { useState, useEffect }  from 'react';
+import { Link } from 'react-router-dom'
+import { ICityWeather } from '../types'
 
 const API_KEY = 'eeb5d7b1fe69afdb6c982febcb09471e'
 interface IError {
     message?: string
 }
-interface ICityWeather {
-    main: {
-        temp: string
-    }
-}
-
 interface CityProps {
   name: string
 }
 
-const City =  (props: CityProps) => {
-  const { name } = props;
+const City =  (props : CityProps) => {
+  const { name } = props
   const [error, setError] = useState<IError | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [cityWeather, setCityWeather] = useState<ICityWeather | null>(null);
@@ -48,8 +44,13 @@ const City =  (props: CityProps) => {
     return <div>Loading...</div>;
   } else {
     return (
-      <ul>
-        {name}: {cityWeather?.main?.temp} °C
+      <ul> 
+        <Link to={{
+          pathname:`city/${name}`,
+          state: {cityWeather}
+        }}>
+          {name}: {cityWeather?.main?.temp} °C
+        </Link>
       </ul>
     );
   }
