@@ -11,7 +11,6 @@ declare module 'styled-components' {
       blackCoffee: string;
       umber: string;
       error: string;
-      font: string;
     };
   }
 }

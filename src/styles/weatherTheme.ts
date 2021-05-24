@@ -1,6 +1,5 @@
 import { DefaultTheme } from 'styled-components';
 
-// const weatherTheme = {
 const weatherTheme: DefaultTheme = {
 
   borderRadius: '5px',

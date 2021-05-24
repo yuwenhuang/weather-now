@@ -1,4 +1,4 @@
-export interface ICityWeather {
+export interface CityWeather {
   name: string
   main: {
     temp: string,

@@ -5,14 +5,14 @@ import {
 } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { ICityWeather } from '../types'
+import { CityWeather } from '../types'
 import { formatTime } from '../utils/formatTime'
 import { media } from '../styles/mediaQuery'
 
 import { WeatherSummary } from '../components/WeatherSummary'
 import { WeatherCondition } from '../components/WeatherCondition'
 
-const WeatherDetailsWrapper = styled.div`
+const WeatherDetailsWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +59,7 @@ interface RouteParams {
   name?: string;
 }
 interface LocationParams {
-  cityWeather: ICityWeather
+  cityWeather: CityWeather
 }
 
 const WeatherDetails =  (): JSX.Element  => {

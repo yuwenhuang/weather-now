@@ -172,7 +172,7 @@ exports[`renders <WeatherDetails /> component 1`] = `
   }
 }
 
-<div
+<section
   className="c0"
 >
   <h1
@@ -289,5 +289,5 @@ exports[`renders <WeatherDetails /> component 1`] = `
       </div>
     </div>
   </div>
-</div>
+</section>
 `;

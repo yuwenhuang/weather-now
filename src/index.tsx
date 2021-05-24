@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
   body {
     background-color: #70ABAF;
     font-family: sans-serif;
-    color: ${props => props.theme.colors.font};
+    color: ${props => props.theme.colors.blackCoffee};
   }
 `
 const App = () => {

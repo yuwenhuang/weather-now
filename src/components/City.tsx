@@ -2,12 +2,10 @@ import React, { useState, useEffect }  from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { ICityWeather } from '../types'
+import { CityWeather } from '../types'
 
 const API_KEY = 'eeb5d7b1fe69afdb6c982febcb09471e'
-interface IError {
-  message?: string
-}
+
 interface CityProps {
   name: string
 }
