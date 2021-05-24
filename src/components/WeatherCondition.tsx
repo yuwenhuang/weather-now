@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const WeatherConditionWrapper = styled.div`
@@ -28,12 +29,12 @@ interface WeatherConditionProps {
   unit?: string
 }
 
-export const WeatherCondition = (props: WeatherConditionProps) => {
-    const { description, value, unit } = props
-    return(
-        <WeatherConditionWrapper>
-            <Description>{description}</Description>
-            <Value>{value} {unit}</Value>
-        </WeatherConditionWrapper>
-    )
+export const WeatherCondition = (props: WeatherConditionProps):JSX.Element  => {
+  const { description, value, unit } = props
+  return(
+    <WeatherConditionWrapper>
+      <Description>{description}</Description>
+      <Value>{value} {unit}</Value>
+    </WeatherConditionWrapper>
+  )
 }

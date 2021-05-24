@@ -55,14 +55,14 @@ interface DashboardState {
   cities: CityInfo[];
 }
 
-class Dashboard extends Component<{}, DashboardState> {
+class Dashboard extends Component<Record<string, never>, DashboardState> {
   state = {
     userLocation: "",
     isSubmitted: false,
     cities:[...defaultCities]
   };
 
-  handleSubmit = (event: React.SyntheticEvent) => {
+  handleSubmit = (event: React.SyntheticEvent):void => {
     event.preventDefault();
     this.setState({ isSubmitted: true })
     this.setState({ 
@@ -74,7 +74,7 @@ class Dashboard extends Component<{}, DashboardState> {
     this.setState({userLocation: event.currentTarget.value})
   }
 
-  renderUserInput = () => {
+  renderUserInput = (): JSX.Element => {
     return(
       <form onSubmit={this.handleSubmit}>
         <label>Enter your city:</label>
@@ -83,30 +83,30 @@ class Dashboard extends Component<{}, DashboardState> {
       </form>)
   }
 
-  renderCities = () => {
+  renderCities = (): JSX.Element => {
     const { cities } = this.state
     
     return(
       <>
-      {cities.map( city => {return <City key={city.id} name={city.name} />})} 
+        {cities.map( city => {return <City key={city.id} name={city.name} />})} 
       </>
     )
     
   }
 
-  render() { 
+  render(): JSX.Element { 
     return(
-        <DashboardWrapper>
-          <DashboardTitle>
+      <DashboardWrapper>
+        <DashboardTitle>
             Weather Now!
-          </DashboardTitle>
-          <SearchSetionWrapper>
-            {this.renderUserInput()}
-          </SearchSetionWrapper> 
-          <CitySectionWrapper>
-            {this.renderCities()} 
-          </CitySectionWrapper>
-        </DashboardWrapper>
+        </DashboardTitle>
+        <SearchSetionWrapper>
+          {this.renderUserInput()}
+        </SearchSetionWrapper> 
+        <CitySectionWrapper>
+          {this.renderCities()} 
+        </CitySectionWrapper>
+      </DashboardWrapper>
     )  
   }
 }

@@ -6,7 +6,7 @@ import { ICityWeather } from '../types'
 
 const API_KEY = 'eeb5d7b1fe69afdb6c982febcb09471e'
 interface IError {
-    message?: string
+  message?: string
 }
 interface CityProps {
   name: string
@@ -35,7 +35,7 @@ text-align: center;
 color: #32292F;
 `;
 
-const City =  (props : CityProps) => {
+const City =  (props : CityProps):JSX.Element => {
   const { name } = props
   const [error, setError] = useState<IError | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -74,17 +74,17 @@ const City =  (props : CityProps) => {
           pathname:`city/${name}`,
           state: {cityWeather}
         }}>
-        <CityName>
-          {name}
-        </CityName>
-        <CityTemperature>  
-          {cityWeather?.main?.temp} °C
-        </CityTemperature>
+          <CityName>
+            {name}
+          </CityName>
+          <CityTemperature>  
+            {cityWeather?.main?.temp} °C
+          </CityTemperature>
         </Link>
       </CityWrapper>
     );
   }
-  }
+}
 
 
 export default City;

@@ -6,9 +6,9 @@ import { wrapper } from '../../utils/testHelper'
 import Dashboard from '../Dashboard'
 
 it('renders <Dashboard /> component without error', () => {
-    const component = renderer.create(
-        wrapper(<Dashboard />)
-    );
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+  const component = renderer.create(
+    wrapper(<Dashboard />)
+  );
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 })

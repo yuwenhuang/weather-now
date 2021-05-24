@@ -62,7 +62,7 @@ interface LocationParams {
   cityWeather: ICityWeather
 }
 
-const WeatherDetails =  () => {
+const WeatherDetails =  (): JSX.Element  => {
   const { name } = useParams<RouteParams>()
   const location = useLocation<LocationParams>()
   const { cityWeather } = location.state
@@ -91,7 +91,7 @@ const WeatherDetails =  () => {
       </WeatherSetion>    
     </WeatherDetailsWrapper>
   ) 
-  }
+}
 
 
 export default WeatherDetails;

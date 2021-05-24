@@ -1,5 +1,5 @@
 import React from 'react';
-import { createGlobalStyle, ThemeProvider, DefaultTheme } from 'styled-components'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
@@ -22,7 +22,7 @@ const App = () => {
   return(
     <React.StrictMode>
       <ThemeProvider theme={weatherTheme}>
-      <GlobalStyle />
+        <GlobalStyle />
         <Router>
           <Switch>
             <Route path="/" exact component={Dashboard} />

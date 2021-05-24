@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const WeatherSummaryWrapper = styled.div`
@@ -37,16 +38,16 @@ interface WeatherSummaryProps {
   description: string
 }
 
-export const WeatherSummary = (props: WeatherSummaryProps) => {
-    const { temp, temp_min, temp_max, description } = props
-    return(
-        <WeatherSummaryWrapper>
-            <Description>{description}</Description>
-            <CurrentTemperature>{temp}°C</CurrentTemperature>
-            <TemperatureLimitWrapper>
-                <TemperatureLimit>H:{temp_max}°C</TemperatureLimit>
-                <TemperatureLimit>L:{temp_min}°C</TemperatureLimit>
-            </TemperatureLimitWrapper>
-        </WeatherSummaryWrapper>
-    )
+export const WeatherSummary = (props: WeatherSummaryProps):JSX.Element => {
+  const { temp, temp_min, temp_max, description } = props
+  return(
+    <WeatherSummaryWrapper>
+      <Description>{description}</Description>
+      <CurrentTemperature>{temp}°C</CurrentTemperature>
+      <TemperatureLimitWrapper>
+        <TemperatureLimit>H:{temp_max}°C</TemperatureLimit>
+        <TemperatureLimit>L:{temp_min}°C</TemperatureLimit>
+      </TemperatureLimitWrapper>
+    </WeatherSummaryWrapper>
+  )
 }
