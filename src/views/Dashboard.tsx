@@ -15,7 +15,6 @@ const DashboardTitle = styled.h1`
   font-size: 3.5em;
   text-align: center;
 `
-//  color: ${(props) => props.theme.colors.blackCoffee};
 const SearchSetionWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -59,15 +58,17 @@ class Dashboard extends Component<Record<string, never>, DashboardState> {
   state = {
     userLocation: "",
     isSubmitted: false,
-    cities:[...defaultCities]
+    cities: JSON.parse(window.localStorage.getItem("cities") || '0') as CityInfo[]|| defaultCities
   };
 
   handleSubmit = (event: React.SyntheticEvent):void => {
     event.preventDefault();
     this.setState({ isSubmitted: true })
+    const cities = [...this.state.cities, { id: this.state.cities.length +1, name: this.state.userLocation }]
     this.setState({ 
-      cities: [...this.state.cities, { id: this.state.cities.length +1, name: this.state.userLocation }]
+      cities,
     })
+    window.localStorage.setItem("cities",JSON.stringify(cities))
   }
 
   handleInputChange = (event: React.FormEvent<HTMLInputElement>): void => {
