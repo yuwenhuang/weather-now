@@ -1,47 +1,49 @@
-# Getting Started with Create React App
+## Weather Now!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project shows a simple weather app, which has the following features:
+1. It shows the current temperature of 2 default cities 
+2. It shows the current temperature of user entered locations
+3. It shows more weather conditions if user clicks the city
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npm test`
+To launch the test runner in the interactive watch mode.
+### `npm run lint`
+To lint the codes
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## My Approach
+First I use Create React App to bootstrap this project. It gives me the basic setup, such as the folder structure and libraries.
 
-### `yarn build`
+Second I start to install some necessary dependencies.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then I start to implement the basic functionalities:
+* fetch data from OpenWeatherMap API
+* render data in the App
+* render different components I need
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After I am sure that I can have the basic weather data displayed in the app, I start to think about how to design and implement the routes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Besides, I notice that I need to do some normalization of the data I get from the API.
 
-### `yarn eject`
+Eventually, when I get all the data rendered in the components and routes I want, I start with the styling.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+In the end, I add some unit tests and snapshot test.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Last but not least, I add more error handling and local storage to keep user's recent entered locations.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## What I would improve
+1. More features: personalization settings
+2. When the application becomes more complex, I will introduce state management library such as Redux
+3. Improve user experience: add icons, animations, localization
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# weather-now
