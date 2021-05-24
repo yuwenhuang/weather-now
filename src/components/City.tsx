@@ -20,53 +20,74 @@ const CityWrapper = styled.div`
   box-shadow: 5px 5px 15px 5px; 
   & > a {
     text-decoration: none;
+    outline: none;
   } 
+  &:focus-within, &:hover {
+    background-color: ${(props) => props.theme.colors.mintCream};
+  }
 `;
 
 const CityName = styled.h2`
-font-size: 1.5em;
-text-align: center;
-color: ${(props) => props.theme.colors.blackCoffee};
+  font-size: 1.5em;
+  text-align: center;
+  color: ${(props) => props.theme.colors.blackCoffee};
 `;
 
 const CityTemperature = styled.h2`
-font-size: 1.5em;
-text-align: center;
-color: #32292F;
+  font-size: 1.5em;
+  text-align: center;
+  color: #32292F;
 `;
+
+const ErrorMessageWrapper = styled.div`
+  background-color: ${(props) => props.theme.colors.error};
+  border-radius: 10px;
+  margin: 20px;
+  padding: 16px;
+`
+const ErrorMessage = styled.text`
+  color: ${(props) => props.theme.colors.mintCream};
+`
 
 const City =  (props : CityProps):JSX.Element => {
   const { name } = props
-  const [error, setError] = useState<IError | null>(null);
+  const [error, setError] = useState<Error | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [cityWeather, setCityWeather] = useState<ICityWeather | null>(null);
+  const [cityWeather, setCityWeather] = useState<CityWeather | null>(null);
 
-  // Note: the empty deps array [] means
-  // this useEffect will run once
-  // similar to componentDidMount()
   useEffect(() => {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=${API_KEY}`)
-      .then(res => res.json())
+      .then(res => {
+        return res.json()
+      })
+      .catch(() =>{
+        throw new Error("Something went wrong, please come back later!")
+      })
       .then(
         (result) => {
-          console.log(result)
-          setIsLoaded(true);
-          setCityWeather(result);
+          if (result.cod!==200) throw new Error(result.message)
+          setIsLoaded(true)
+          setCityWeather(result)
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
-          setIsLoaded(true);
-          setError(error);
+          setIsLoaded(true)
+          setError(error)
         }
-      )
+      ).catch((error) => {
+        setError(error)
+      })
   }, [])
   
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return (
+      <ErrorMessageWrapper>
+        <ErrorMessage>
+          Error: {error.message}
+        </ErrorMessage>
+      </ErrorMessageWrapper>
+    )
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   } else {
     return (
       <CityWrapper>

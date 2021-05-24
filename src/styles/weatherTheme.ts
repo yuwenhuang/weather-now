@@ -11,9 +11,8 @@ const weatherTheme: DefaultTheme = {
     mintCream: '#F0F7F4',
     blackCoffee: '#32292F',
     umber: '#705D56',
-    font: '#32292F'
+    error: '#cb514b',
   },
 };
-//font: '#32292F'
 export type ThemeType = typeof weatherTheme
 export { weatherTheme }

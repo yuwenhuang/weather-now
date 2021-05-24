@@ -10,6 +10,7 @@ declare module 'styled-components' {
       mintCream: string;
       blackCoffee: string;
       umber: string;
+      error: string;
       font: string;
     };
   }
