@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <WeatherDetails /> component 1`] = `
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-aligh-items: center;
+  -webkit-box-aligh: center;
+  -ms-flex-aligh: center;
+  aligh-items: center;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  background-color: #99E1D9;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px;
+  margin: 20px;
+  padding: 16px;
+}
+
+.c4 {
+  text-align: center;
+  font-size: 1em;
+}
+
+.c5 {
+  text-align: center;
+  font-size: 3em;
+}
+
+.c6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c7 {
+  padding: 16px;
+}
+
+.c10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #99E1D9;
+  border-radius: 10px;
+  min-width: 150px;
+  margin: 20px;
+  padding: 16px;
+  box-shadow: 5px 5px 15px 5px;
+}
+
+.c11 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.c12 {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 20px;
+  padding: 16px;
+}
+
+.c1 {
+  font-size: 3.5em;
+  text-align: center;
+  color: #32292F;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width:2560px) {
+  .c2 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (max-width:768px) {
+  .c2 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (max-width:576px) {
+  .c2 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media (max-width:2560px) {
+  .c9 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (max-width:768px) {
+  .c9 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (max-width:576px) {
+  .c9 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  />
+  <div
+    className="c2"
+  >
+    <div
+      className="c3"
+    >
+      <text
+        className="c4"
+      >
+        test
+      </text>
+      <text
+        className="c5"
+      >
+        10
+        °C
+      </text>
+      <div
+        className="c6"
+      >
+        <div
+          className="c7"
+        >
+          H:
+          20
+          °C
+        </div>
+        <div
+          className="c7"
+        >
+          L:
+          0
+          °C
+        </div>
+      </div>
+    </div>
+    <div
+      className="c8"
+    >
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          <div
+            className="c11"
+          >
+            humidity
+          </div>
+          <text
+            className="c12"
+          >
+            25
+             
+            %
+          </text>
+        </div>
+        <div
+          className="c10"
+        >
+          <div
+            className="c11"
+          >
+            visibility
+          </div>
+          <text
+            className="c12"
+          >
+            1000
+             
+            m
+          </text>
+        </div>
+      </div>
+      <div
+        className="c9"
+      >
+        <div
+          className="c10"
+        >
+          <div
+            className="c11"
+          >
+            sunrise
+          </div>
+          <text
+            className="c12"
+          >
+            12:00 AM
+             
+          </text>
+        </div>
+        <div
+          className="c10"
+        >
+          <div
+            className="c11"
+          >
+            sunset
+          </div>
+          <text
+            className="c12"
+          >
+            12:00 AM
+             
+          </text>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

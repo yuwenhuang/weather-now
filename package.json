@@ -1,8 +1,10 @@
 {
   "name": "weather-now",
   "version": "0.1.0",
-  "babel":{
-    "plugins": ["styled-component"]
+  "babel": {
+    "plugins": [
+      "styled-component"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -27,7 +29,9 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.12.0"
+    "babel-plugin-styled-components": "^1.12.0",
+    "jest-styled-components": "^7.0.4",
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

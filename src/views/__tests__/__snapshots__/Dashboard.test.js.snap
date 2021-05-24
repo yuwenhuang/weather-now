@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <Dashboard /> component without error 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 20px;
+  padding: 16px;
+}
+
+.c1 {
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  max-width: 400px;
+  background-color: #99E1D9;
+  border-radius: 10px;
+  -webkit-aligh-itens: center;
+  -webkit-box-aligh-itens: center;
+  -ms-flex-aligh-itens: center;
+  aligh-itens: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+}
+
+<div
+  className="c0"
+>
+  <h1
+    className="c1"
+  >
+    Weather Now!
+  </h1>
+  <div
+    className="c2"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Enter your city:
+      </label>
+      <input
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+      <input
+        type="submit"
+        value="Submit"
+      />
+    </form>
+  </div>
+  <div
+    className="c3"
+  >
+    <div>
+      Loading...
+    </div>
+    <div>
+      Loading...
+    </div>
+  </div>
+</div>
+`;

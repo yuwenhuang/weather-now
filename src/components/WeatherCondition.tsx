@@ -30,7 +30,6 @@ interface WeatherConditionProps {
 
 export const WeatherCondition = (props: WeatherConditionProps) => {
     const { description, value, unit } = props
-    console.log('description', description)
     return(
         <WeatherConditionWrapper>
             <Description>{description}</Description>

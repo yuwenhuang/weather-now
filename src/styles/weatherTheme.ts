@@ -1,6 +1,8 @@
 import { DefaultTheme } from 'styled-components';
 
+// const weatherTheme = {
 const weatherTheme: DefaultTheme = {
+
   borderRadius: '5px',
 
   colors: {
@@ -12,5 +14,6 @@ const weatherTheme: DefaultTheme = {
     font: '#32292F'
   },
 };
-
+//font: '#32292F'
+export type ThemeType = typeof weatherTheme
 export { weatherTheme }

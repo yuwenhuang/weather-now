@@ -9,8 +9,8 @@ import { ICityWeather } from '../types'
 import { formatTime } from '../utils/formatTime'
 import { media } from '../styles/mediaQuery'
 
-import { WeatherSummary } from './WeatherSummary'
-import { WeatherCondition } from './WeatherCondition'
+import { WeatherSummary } from '../components/WeatherSummary'
+import { WeatherCondition } from '../components/WeatherCondition'
 
 const WeatherDetailsWrapper = styled.div`
   display: flex;
@@ -66,7 +66,6 @@ const WeatherDetails =  () => {
   const { name } = useParams<RouteParams>()
   const location = useLocation<LocationParams>()
   const { cityWeather } = location.state
-  console.log('cityWeather', cityWeather)
   const { main, visibility, sys, timezone, weather } = cityWeather
   const { temp, temp_min, temp_max } = main
   const { sunrise, sunset } = sys

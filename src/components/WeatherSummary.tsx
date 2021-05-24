@@ -39,7 +39,6 @@ interface WeatherSummaryProps {
 
 export const WeatherSummary = (props: WeatherSummaryProps) => {
     const { temp, temp_min, temp_max, description } = props
-    console.log('description', description)
     return(
         <WeatherSummaryWrapper>
             <Description>{description}</Description>

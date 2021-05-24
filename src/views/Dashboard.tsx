@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
 
-import City from './components/City';
+import City from '../components/City';
 
 const DashboardWrapper = styled.div`
   display: flex;
@@ -14,8 +14,8 @@ const DashboardWrapper = styled.div`
 const DashboardTitle = styled.h1`
   font-size: 3.5em;
   text-align: center;
-  color: ${(props) => props.theme.colors.blackCoffee};
 `
+//  color: ${(props) => props.theme.colors.blackCoffee};
 const SearchSetionWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -88,7 +88,7 @@ class Dashboard extends Component<{}, DashboardState> {
     
     return(
       <>
-      { cities.map( city => {return <City name={city.name} />})} 
+      {cities.map( city => {return <City key={city.id} name={city.name} />})} 
       </>
     )
     
@@ -96,7 +96,6 @@ class Dashboard extends Component<{}, DashboardState> {
 
   render() { 
     return(
-      <React.StrictMode>
         <DashboardWrapper>
           <DashboardTitle>
             Weather Now!
@@ -108,7 +107,6 @@ class Dashboard extends Component<{}, DashboardState> {
             {this.renderCities()} 
           </CitySectionWrapper>
         </DashboardWrapper>
-      </React.StrictMode>
     )  
   }
 }
