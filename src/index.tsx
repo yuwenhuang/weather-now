@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-} from 'react-router-dom';
+} from 'react-router-dom'
 
 import { weatherTheme, ThemeType } from './styles/weatherTheme'
 import Dashboard from './views/Dashboard'
@@ -38,4 +38,4 @@ const App = () => {
 ReactDOM.render(
   <App />,
   document.getElementById('root')
-);
+)

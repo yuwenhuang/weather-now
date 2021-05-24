@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   useParams,
   useLocation,
@@ -94,4 +94,4 @@ const WeatherDetails =  (): JSX.Element  => {
 }
 
 
-export default WeatherDetails;
+export default WeatherDetails

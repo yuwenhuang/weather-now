@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme } from 'styled-components'
 
 const weatherTheme: DefaultTheme = {
 
@@ -12,6 +12,6 @@ const weatherTheme: DefaultTheme = {
     umber: '#705D56',
     error: '#cb514b',
   },
-};
+}
 export type ThemeType = typeof weatherTheme
 export { weatherTheme }

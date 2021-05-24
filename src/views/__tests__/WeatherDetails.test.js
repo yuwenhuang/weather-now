@@ -1,5 +1,5 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
+import React from 'react'
+import renderer from 'react-test-renderer'
 import 'jest-styled-components'
 
 import { wrapper } from '../../utils/testHelper'
@@ -33,12 +33,12 @@ jest.mock("react-router-dom", () => ({
       }
     }  
   })
-}));
+}))
 
 it('renders <WeatherDetails /> component', () => {
   const component = renderer.create(
     wrapper(<WeatherDetails />)
-  );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  )
+  const tree = component.toJSON()
+  expect(tree).toMatchSnapshot()
 })

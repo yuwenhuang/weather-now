@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import City from '../components/City';
+import City from '../components/City'
 
 const DashboardWrapper = styled.div`
   display: flex;
@@ -9,12 +9,13 @@ const DashboardWrapper = styled.div`
   align-items: center;
   margin: 20px;
   padding: 16px;
-`
+`;
 
 const DashboardTitle = styled.h1`
   font-size: 3.5em;
   text-align: center;
-`
+`;
+
 const SearchSetionWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -37,7 +38,6 @@ const CitySectionWrapper = styled.div`
   padding: 20px;
 `;
 
-
 const defaultCities = [
   { id: 1, name: 'London'},
   { id: 2, name: 'Berlin'}
@@ -59,10 +59,10 @@ class Dashboard extends Component<Record<string, never>, DashboardState> {
     userLocation: "",
     isSubmitted: false,
     cities: JSON.parse(window.localStorage.getItem("cities") || '0') as CityInfo[]|| defaultCities
-  };
+  }
 
   handleSubmit = (event: React.SyntheticEvent):void => {
-    event.preventDefault();
+    event.preventDefault()
     this.setState({ isSubmitted: true })
     const cities = [...this.state.cities, { id: this.state.cities.length +1, name: this.state.userLocation }]
     this.setState({ 
@@ -81,7 +81,8 @@ class Dashboard extends Component<Record<string, never>, DashboardState> {
         <label>Enter your city:</label>
         <input type="text" value={this.state.userLocation} onChange={this.handleInputChange}></input>
         <input type="submit" value="Submit" />
-      </form>)
+      </form>
+    )
   }
 
   renderCities = (): JSX.Element => {
@@ -89,17 +90,16 @@ class Dashboard extends Component<Record<string, never>, DashboardState> {
     
     return(
       <>
-        {cities.map( city => {return <City key={city.id} name={city.name} />})} 
+        {cities.map(city => {return <City key={city.id} name={city.name} />})} 
       </>
-    )
-    
+    ) 
   }
 
   render(): JSX.Element { 
     return(
       <DashboardWrapper>
         <DashboardTitle>
-            Weather Now!
+          Weather Now!
         </DashboardTitle>
         <SearchSetionWrapper>
           {this.renderUserInput()}
